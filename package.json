@@ -1,0 +1,11 @@
+{
+  "name": "tdd",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "jest": "^30.0.5"
+  }
+}
