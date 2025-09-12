@@ -1,0 +1,79 @@
+openapi: 3.0.1
+info:
+  title: Users API
+  version: 1.0.0
+  description: Endpoints para gestionar usuarios
+
+paths:
+  /api/users:
+    get:
+      summary: Obtener todos los usuarios
+      responses:
+        "200":
+          description: Lista de usuarios obtenida correctamente
+    post:
+      summary: Crear un nuevo usuario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "201":
+          description: Usuario creado exitosamente
+  /api/users/{uid}:
+    get:
+      summary: Obtener usuario por ID
+      parameters:
+        - in: path
+          name: uid
+          schema:
+            type: string
+          required: true
+          description: ID del usuario
+      responses:
+        "200":
+          description: Usuario obtenido correctamente
+        "404":
+          description: Usuario no encontrado
+    put:
+      summary: Actualizar usuario
+      parameters:
+        - in: path
+          name: uid
+          schema:
+            type: string
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+      responses:
+        "200":
+          description: Usuario actualizado
+    delete:
+      summary: Eliminar usuario
+      parameters:
+        - in: path
+          name: uid
+          schema:
+            type: string
+          required: true
+      responses:
+        "200":
+          description: Usuario eliminado
