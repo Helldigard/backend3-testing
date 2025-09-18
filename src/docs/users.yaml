@@ -77,3 +77,23 @@ paths:
       responses:
         "200":
           description: Usuario eliminado
+      components:
+    schemas:
+      User:
+        type: object
+        properties:
+          _id:
+            type: string
+            example: "64ab9f1b3d2e2c001c9d4b23"
+          name:
+            type: string
+            example: "Juan Ignacio"
+          email:
+            type: string
+            example: "juan@gmail.com"
+          password:
+            type: string
+            example: "hashedpassword123"
+
+
+

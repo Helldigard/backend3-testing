@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import mocksRouter from './src/routes/mocks.router.js';
 import { swaggerUi, swaggerSpecs } from "./src/config/swagger.js";
 import dotenv from "dotenv";
+import adoptionRouter from "./src/routes/adoption.router.js";
 
 
 dotenv.config();
@@ -29,5 +30,8 @@ app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 app.get("/", (req, res) => {
     res.send("Todo en oden");
 });
+
+// adoptions test
+app.use("/api/adoptions", adoptionRouter);
 
 export default app;
